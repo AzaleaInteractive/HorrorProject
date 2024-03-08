@@ -22,8 +22,11 @@ AHideActorBase::AHideActorBase()
 	M_SecondaryMesh = CreateDefaultSubobject<UStaticMeshComponent>("SecondaryMesh");
 	M_SecondaryMesh->SetupAttachment(RootComponent);
 
-	//M_Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
-	//M_Camera->SetupAttachment(RootComponent);
+	M_HitBox = CreateDefaultSubobject<UBoxComponent>("HitBox");
+	M_HitBox->SetupAttachment(RootComponent);
+
+	M_HidingSpot = EHidingSpotType::E_Locker;
+
 }
 
 // Called when the game starts or when spawned
