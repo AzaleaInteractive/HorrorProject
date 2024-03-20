@@ -26,7 +26,7 @@ AFrequencyBox::AFrequencyBox()
 	M_CameraComp = CreateDefaultSubobject<UCameraComponent>("CameraComp");
 	M_CameraComp->SetupAttachment(RootComponent);
 
-	M_CorrectFrequency = UKismetMathLibrary::RandomIntegerInRange(0, 360);
+	
 	
 
 }
@@ -38,6 +38,8 @@ void AFrequencyBox::BeginPlay()
 
 	M_InteractBox->OnComponentBeginOverlap.AddDynamic(this, &AFrequencyBox::OnBoxOverlap);
 	M_InteractBox->OnComponentEndOverlap.AddDynamic(this, &AFrequencyBox::OnBoxEndOverlap);
+
+	M_CorrectFrequency = UKismetMathLibrary::RandomIntegerInRange(0, 360);
 }
 
 void AFrequencyBox::OnBoxOverlap(UPrimitiveComponent* OverlappedActor, AActor* OtherActor,
