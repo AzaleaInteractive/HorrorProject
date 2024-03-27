@@ -27,6 +27,9 @@ AFrequencyBox::AFrequencyBox()
 	M_CameraComp->SetupAttachment(RootComponent);
 
 	
+	M_CurrentFrequency = 90;
+
+	
 	
 
 }
@@ -38,6 +41,8 @@ void AFrequencyBox::BeginPlay()
 
 	M_InteractBox->OnComponentBeginOverlap.AddDynamic(this, &AFrequencyBox::OnBoxOverlap);
 	M_InteractBox->OnComponentEndOverlap.AddDynamic(this, &AFrequencyBox::OnBoxEndOverlap);
+
+	M_CurrentFrequency = 90;
 
 	M_CorrectFrequency = UKismetMathLibrary::RandomIntegerInRange(0, 360);
 }
