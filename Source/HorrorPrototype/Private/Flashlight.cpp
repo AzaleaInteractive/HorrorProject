@@ -55,21 +55,7 @@ void AFlashlight::Tick(float DeltaTime)
 		}
 
 	}
-
-	if (!M_bFlashlightOn && M_CurrentBattery < 100 && !M_bPunishement)
-	{
-		if (M_Delay == 0)
-		{
-			M_CurrentBattery += M_ChargeRate;
-			M_CurrentBattery = FMath::Clamp(M_CurrentBattery, 0, M_MaxBattery);
-		}
-		else
-		{
-			M_Delay -= 0.1;
-			M_Delay = FMath::Clamp(M_Delay, 0, 50000);
-		}
-		
-	}
+	
 
 }
 

@@ -32,7 +32,7 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (DisplayName = "FlashlightOn?"))
 	bool M_bFlashlightOn;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (DisplayName = "CurrentBattery"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (DisplayName = "CurrentBattery"))
 	float M_CurrentBattery;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (DisplayName = "MaxBattery"))
