@@ -7,7 +7,10 @@
 		{
 			"Name": "HorrorPrototype",
 			"Type": "Runtime",
-			"LoadingPhase": "Default"
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
 		}
 	],
 	"Plugins": [
@@ -24,6 +27,10 @@
 		},
 		{
 			"Name": "Soundscape",
+			"Enabled": true
+		},
+		{
+			"Name": "CommonUI",
 			"Enabled": true
 		}
 	]
