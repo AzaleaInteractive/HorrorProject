@@ -57,6 +57,9 @@ protected:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (DisplayName = "CanInteract"))
 	bool M_bCanInteract;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Default",meta = (ExposeOnSpawn = "true", DisplayName = "TargetActor"))
+	AActor* M_TargetActor;
 	
 
 public:	
