@@ -14,6 +14,7 @@ enum class EHidingSpotType : uint8
 	E_Locker UMETA(DisplayName="Locker"),
 	E_Desk UMETA(DisplayName="Desk"),
 	E_Bed UMETA(DisplayName="Bed"),
+	E_MedicalBed UMETA(DisplayName="MedicalBed"),
 };
 
 UCLASS()
