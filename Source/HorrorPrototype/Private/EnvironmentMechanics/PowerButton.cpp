@@ -9,6 +9,16 @@ APowerButton::APowerButton()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	M_RootComponent = CreateDefaultSubobject<USceneComponent>("RootComponent");
+	RootComponent = M_RootComponent;
+
+	M_MainMesh = CreateDefaultSubobject<UStaticMeshComponent>("MainMesh");
+	M_MainMesh->SetupAttachment(RootComponent);
+
+	M_SecondMesh = CreateDefaultSubobject<UStaticMeshComponent>("SecondMesh");
+	M_SecondMesh->SetupAttachment(RootComponent);
+
+
 }
 
 // Called when the game starts or when spawned

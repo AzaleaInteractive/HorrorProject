@@ -10,6 +10,16 @@ UCLASS()
 class HORRORPROTOTYPE_API APowerButton : public AActor
 {
 	GENERATED_BODY()
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true", DisplayName = "RootComponent"))
+	USceneComponent* M_RootComponent;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true", DisplayName = "MainMesh"))
+	UStaticMeshComponent* M_MainMesh;
+
+		
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true", DisplayName = "SecondMesh"))
+	UStaticMeshComponent* M_SecondMesh;
 	
 public:	
 	// Sets default values for this actor's properties
