@@ -63,12 +63,14 @@ void AFlashlight::FlashlightSwitch()
 {
 	if (M_bFlashlightOn)
 	{
-		// Turn Off Flashlight
+		// Turn On Flashlight
+		GEngine->AddOnScreenDebugMessage(-1, 2, FColor::Blue, TEXT("FlashlightOn"));
 		M_Spotlight->SetHiddenInGame(false);
 	}
 	else if (!M_bFlashlightOn)
 	{
 		// Turn Off Flashlight
+		GEngine->AddOnScreenDebugMessage(-1, 2, FColor::Blue, TEXT("FlashlightOff"));
 		M_Spotlight->SetHiddenInGame(true);
 	}
 }
