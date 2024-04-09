@@ -61,15 +61,17 @@ void AFlashlight::Tick(float DeltaTime)
 
 void AFlashlight::FlashlightSwitch()
 {
-	if (!M_bFlashlightOn)
+	if (M_bFlashlightOn)
 	{
-		M_bFlashlightOn = false;
-		M_Spotlight->SetHiddenInGame(true);
-	}
-	else if (M_bFlashlightOn)
-	{
-		M_bFlashlightOn = true;
+		// Turn On Flashlight
+		GEngine->AddOnScreenDebugMessage(-1, 2, FColor::Blue, TEXT("FlashlightOn"));
 		M_Spotlight->SetHiddenInGame(false);
+	}
+	else if (!M_bFlashlightOn)
+	{
+		// Turn Off Flashlight
+		GEngine->AddOnScreenDebugMessage(-1, 2, FColor::Blue, TEXT("FlashlightOff"));
+		M_Spotlight->SetHiddenInGame(true);
 	}
 }
 
