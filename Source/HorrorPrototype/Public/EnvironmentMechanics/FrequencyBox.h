@@ -50,22 +50,22 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,meta = (DisplayName = "CanInteract"))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Settings",meta = (DisplayName = "CanInteract"))
 	bool M_bCanInteract;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly,meta = (DisplayName = "SingleItem", ExposeOnSpawn = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Settings", meta = (DisplayName = "SingleItem", ExposeOnSpawn = "true"))
 	bool M_bSingleItem;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta = (DisplayName = "CorrectFrequency"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly,Category = "Settings", meta = (DisplayName = "CorrectFrequency"))
 	int M_CorrectFrequency;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (DisplayName = "CurrentFrequency"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite,Category = "Settings", meta = (DisplayName = "CurrentFrequency"))
 	float M_CurrentFrequency = 90;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category = "Settings")
 	TSubclassOf<ACharacter> M_PlayerCharacter;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly,meta = (DisplayName = "TargetObject", ExposeOnSpawn = "true"))
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Settings", meta = (DisplayName = "TargetObject", ExposeOnSpawn = "true"))
 	AActor* M_TargetObject;
 
 	
