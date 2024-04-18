@@ -44,15 +44,8 @@ void ARechargeStation::Recharge(ACharacter* CharacterPawn)
 	if (CharacterPawn)
 	{
 		M_CharacterPawn = CharacterPawn;
-		float AnimationTime = 2;
 		CharacterPawn->DisableInput(M_PC);
-		if (M_RechargeAnimation)
-		{
-			AnimationTime = CharacterPawn->PlayAnimMontage(M_RechargeAnimation);
-		}
-		FTimerHandle AnimationTimerHandle;
-		GetWorldTimerManager().SetTimer(AnimationTimerHandle, this, &ARechargeStation::EndCharging, AnimationTime, false);
-		
+		M_RechargeFlashlight.Broadcast();
 	}
 }
 
@@ -62,7 +55,7 @@ void ARechargeStation::EndCharging()
 	if (M_CharacterPawn)
 	{
 		M_CharacterPawn->EnableInput(M_PC);
-		M_RechargeFlashlight.Broadcast();
+		
 	}
 }
 
