@@ -41,17 +41,18 @@ void AFlashlight::Tick(float DeltaTime)
 
 	if (M_bFlashlightOn && M_CurrentBattery > 0)
 	{
+		M_bLowPowerMode = false;
+		M_Spotlight->SetAttenuationRadius(1000);
+		M_Spotlight->SetIntensity(6000);
 		M_CurrentBattery -= M_DecayRate;
 		M_Delay = 10;
 		M_CurrentBattery = FMath::Clamp(M_CurrentBattery, 0, M_MaxBattery);
 
-		if (M_CurrentBattery == 0)
+		if (M_CurrentBattery == 0 && !M_bLowPowerMode)
 		{
-			FTimerHandle PunishmentHandle;
-			M_bFlashlightOn = false;
-			M_bPunishement = true;
-			FlashlightSwitch();
-			GetWorldTimerManager().SetTimer(PunishmentHandle, this, &AFlashlight::Punishment, 2);
+			M_bLowPowerMode = true;
+			M_Spotlight->SetAttenuationRadius(400);
+			M_Spotlight->SetIntensity(2000);
 		}
 
 	}
@@ -75,8 +76,4 @@ void AFlashlight::FlashlightSwitch()
 	}
 }
 
-void AFlashlight::Punishment()
-{
-	M_bPunishement = false;
-}
 

@@ -48,6 +48,8 @@ protected:
 
 	float M_Delay = 10;
 
+	bool M_bLowPowerMode;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
