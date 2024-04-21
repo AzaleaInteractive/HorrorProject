@@ -51,8 +51,8 @@ void AFlashlight::Tick(float DeltaTime)
 		if (M_CurrentBattery == 0 && !M_bLowPowerMode)
 		{
 			M_bLowPowerMode = true;
-			M_Spotlight->SetAttenuationRadius(400);
-			M_Spotlight->SetIntensity(2000);
+			M_Spotlight->SetAttenuationRadius(M_LowPowerRadius);
+			M_Spotlight->SetIntensity(M_LowPowerIntensity);
 		}
 
 	}
