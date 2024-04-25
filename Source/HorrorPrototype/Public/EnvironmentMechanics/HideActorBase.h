@@ -3,22 +3,13 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Camera/CameraComponent.h"
-#include "Components/BoxComponent.h"
 #include "GameFramework/Actor.h"
+#include "GameplayTagContainer.h"
+#include "GameplayTagAssetInterface.h"
 #include "HideActorBase.generated.h"
 
-UENUM(BlueprintType)
-enum class EHidingSpotType : uint8
-{
-	E_Locker UMETA(DisplayName="Locker"),
-	E_Desk UMETA(DisplayName="Desk"),
-	E_Bed UMETA(DisplayName="Bed"),
-	E_MedicalBed UMETA(DisplayName="MedicalBed"),
-};
-
 UCLASS()
-class HORRORPROTOTYPE_API AHideActorBase : public AActor
+class HORRORPROTOTYPE_API AHideActorBase : public AActor, public IGameplayTagAssetInterface
 {
 	GENERATED_BODY()
 
@@ -26,30 +17,16 @@ public:
 	// Sets default values for this actor's properties
 	AHideActorBase();
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true", DisplayName = "RootComp"))
-	USceneComponent* M_RootComp;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true", DisplayName = "MainMesh"))
-	UStaticMeshComponent* M_MainMesh;
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true", DisplayName = "SecondaryMesh"))
-	UStaticMeshComponent* M_SecondaryMesh;
-	
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true", DisplayName = "HitBox"))
-	UBoxComponent* M_HitBox;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay Tags", meta = (ExposeOnSpawn = "true"))
+	FGameplayTagContainer OwnedGameplayTags;
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Hiding Enum",meta = (ExposeOnSpawn = "true", DisplayName = "HidingSpotEnum"))
-	EHidingSpotType M_HidingSpot;
-
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta = (DisplayName = "CanHide"))
-	bool M_bCanHide;
-	
+	virtual void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override { TagContainer = OwnedGameplayTags; return; };
 };
