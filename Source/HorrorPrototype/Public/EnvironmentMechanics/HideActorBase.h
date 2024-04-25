@@ -17,7 +17,7 @@ public:
 	// Sets default values for this actor's properties
 	AHideActorBase();
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay Tags")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay Tags", meta = (ExposeOnSpawn = "true"))
 	FGameplayTagContainer OwnedGameplayTags;
 
 protected:
