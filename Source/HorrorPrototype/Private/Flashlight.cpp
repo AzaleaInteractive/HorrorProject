@@ -43,7 +43,7 @@ void AFlashlight::Tick(float DeltaTime)
 	{
 		M_bLowPowerMode = false;
 		M_Spotlight->SetAttenuationRadius(1000);
-		M_Spotlight->SetIntensity(6000);
+		M_Spotlight->SetIntensity(HighPowerIntensity);
 		M_CurrentBattery -= M_DecayRate;
 		M_Delay = 10;
 		M_CurrentBattery = FMath::Clamp(M_CurrentBattery, 0, M_MaxBattery);
