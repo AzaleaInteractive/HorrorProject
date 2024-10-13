@@ -48,9 +48,9 @@ protected:
 
 	float M_Delay = 10;
 
-	UPROPERTY(EditAnywhere, Category = "LowPower", meta = (DisplayName = "LowPowerIntensity"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float M_LowPowerIntensity = 2000;
-	UPROPERTY(EditAnywhere, Category = "LowPower", meta = (DisplayName = "LowPowerRadius"))
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float M_LowPowerRadius = 300;
 
 	bool M_bLowPowerMode;
