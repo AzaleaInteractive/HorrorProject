@@ -55,6 +55,9 @@ protected:
 
 	bool M_bLowPowerMode;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float HighPowerIntensity = 6000;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
