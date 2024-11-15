@@ -1,4 +1,4 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
+// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -6,16 +6,16 @@
 #include "GameFramework/Actor.h"
 #include "GameplayTagContainer.h"
 #include "GameplayTagAssetInterface.h"
-#include "HideActorBase.generated.h"
+#include "RoomBase.generated.h"
 
 UCLASS()
-class HORRORPROTOTYPE_API AHideActorBase : public AActor, public IGameplayTagAssetInterface
+class DEADABYSS_API ARoomBase : public AActor, public IGameplayTagAssetInterface
 {
 	GENERATED_BODY()
-
-public:
+	
+public:	
 	// Sets default values for this actor's properties
-	AHideActorBase();
+	ARoomBase();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay Tags", meta = (ExposeOnSpawn = "true"))
 	FGameplayTagContainer OwnedGameplayTags;
@@ -24,7 +24,7 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:
+public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 

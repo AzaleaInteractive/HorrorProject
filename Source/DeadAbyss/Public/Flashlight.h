@@ -8,7 +8,7 @@
 #include "Flashlight.generated.h"
 
 UCLASS()
-class HORRORPROTOTYPE_API AFlashlight : public AActor
+class DEADABYSS_API AFlashlight : public AActor
 {
 	GENERATED_BODY()
 

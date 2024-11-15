@@ -3,19 +3,19 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/Actor.h"
+#include "GameFramework/Character.h"
 #include "GameplayTagContainer.h"
 #include "GameplayTagAssetInterface.h"
-#include "RoomBase.generated.h"
+#include "PlayerCharacterBase.generated.h"
 
 UCLASS()
-class HORRORPROTOTYPE_API ARoomBase : public AActor, public IGameplayTagAssetInterface
+class DEADABYSS_API APlayerCharacterBase : public ACharacter, public IGameplayTagAssetInterface
 {
 	GENERATED_BODY()
-	
-public:	
-	// Sets default values for this actor's properties
-	ARoomBase();
+
+public:
+	// Sets default values for this character's properties
+	APlayerCharacterBase();
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gameplay Tags", meta = (ExposeOnSpawn = "true"))
 	FGameplayTagContainer OwnedGameplayTags;
@@ -27,6 +27,9 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	// Called to bind functionality to input
+	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	virtual void GetOwnedGameplayTags(FGameplayTagContainer& TagContainer) const override { TagContainer = OwnedGameplayTags; return; };
 };

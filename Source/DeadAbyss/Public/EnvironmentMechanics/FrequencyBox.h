@@ -10,7 +10,7 @@
 #include "FrequencyBox.generated.h"
 
 UCLASS()
-class HORRORPROTOTYPE_API AFrequencyBox : public AActor
+class DEADABYSS_API AFrequencyBox : public AActor
 {
 	GENERATED_BODY()
 

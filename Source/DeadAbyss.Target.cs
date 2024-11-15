@@ -3,13 +3,13 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class HorrorPrototypeTarget : TargetRules
+public class DeadAbyssTarget : TargetRules
 {
-	public HorrorPrototypeTarget(TargetInfo Target) : base(Target)
+	public DeadAbyssTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V4;
 
-		ExtraModuleNames.AddRange( new string[] { "HorrorPrototype" } );
+		ExtraModuleNames.AddRange( new string[] { "DeadAbyss" } );
 	}
 }

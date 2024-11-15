@@ -11,7 +11,7 @@
  * 
  */
 UCLASS()
-class HORRORPROTOTYPE_API AMessageTriggerBox : public ATriggerBox
+class DEADABYSS_API AMessageTriggerBox : public ATriggerBox
 {
 	GENERATED_BODY()
 

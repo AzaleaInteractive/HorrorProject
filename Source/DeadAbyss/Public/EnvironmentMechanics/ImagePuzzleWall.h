@@ -4,16 +4,23 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "MyActor.generated.h"
+#include "Components/DecalComponent.h"
+#include "ImagePuzzleWall.generated.h"
 
 UCLASS()
-class HORRORPROTOTYPE_API AMyActor : public AActor
+class DEADABYSS_API AImagePuzzleWall : public AActor
 {
 	GENERATED_BODY()
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true", DisplayName = "RootComp"))
+	USceneComponent* M_RootComp;
+
+
+	
 	
 public:	
 	// Sets default values for this actor's properties
-	AMyActor();
+	AImagePuzzleWall();
 
 protected:
 	// Called when the game starts or when spawned
