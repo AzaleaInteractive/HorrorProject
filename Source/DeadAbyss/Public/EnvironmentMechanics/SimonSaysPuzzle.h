@@ -19,7 +19,7 @@ enum class ELevel : uint8
 
 UCLASS()
 
-class HORRORPROTOTYPE_API ASimonSaysPuzzle : public AActor
+class DEADABYSS_API ASimonSaysPuzzle : public AActor
 {
 	GENERATED_BODY()
 

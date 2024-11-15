@@ -7,7 +7,7 @@
 #include "PowerButton.generated.h"
 
 UCLASS()
-class HORRORPROTOTYPE_API APowerButton : public AActor
+class DEADABYSS_API APowerButton : public AActor
 {
 	GENERATED_BODY()
 

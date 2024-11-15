@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class HorrorPrototype : ModuleRules
+public class DeadAbyss : ModuleRules
 {
-	public HorrorPrototype(ReadOnlyTargetRules Target) : base(Target)
+	public DeadAbyss(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	

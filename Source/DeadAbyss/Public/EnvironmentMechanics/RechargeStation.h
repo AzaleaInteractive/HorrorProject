@@ -11,7 +11,7 @@
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FRechargeFlashlight);
 
 UCLASS()
-class HORRORPROTOTYPE_API ARechargeStation : public AActor
+class DEADABYSS_API ARechargeStation : public AActor
 {
 	GENERATED_BODY()
 
